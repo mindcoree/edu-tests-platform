@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: name_container
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+      - minio
+
+  db:
+    image: postgres:15
+    container_name: name_db_container
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env
+    ports:
+      - "5433:5432"
+
+  minio:
+    image: minio/minio:latest
+    container_name: name_minio_container
+    command: server /data --console-address ":9001"
+    env_file:
+      - ./backend/.env
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  # Frontend service (placeholder)
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: name_container
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+
+volumes:
+  postgres_data:
+  minio_data:

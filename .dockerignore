@@ -1,0 +1,26 @@
+# Исключаем виртуальное окружение
+venv/
+.venv/
+
+# Исключаем кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Исключаем файлы IDE
+.idea/
+.vscode/
+
+# Исключаем файлы сборки
+dist/
+build/
+*.egg-info/
+
+# Исключаем файлы окружения
+.env.example
+
+# Docker-файлы
+Dockerfile
+.dockerignore
+
