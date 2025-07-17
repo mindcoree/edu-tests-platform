@@ -241,12 +241,6 @@ views.py → schemas.py → services.py → exceptions.py → repository.py → 
 
 Приложение будет доступно по адресу `http://localhost:8000`
 
-## Документация
-
-- [Документация API](docs/api.md)  
-- [Инструкция по развертыванию](docs/deployment.md)  
-- [Описание структуры БД](docs/database.md)
-
 ## Вклад
 
 Если вы хотите внести вклад, пожалуйста, создайте issue или pull request. Мы приветствуем любые предложения по улучшению платформы!
