@@ -5,7 +5,6 @@ class Role(str, Enum):
     ADMIN = "admin"
     STUDENT = "student"
     TEACHER = "teacher"
-    SPECIALIST = "specialist"
 
 
 class RoleRequestStatus(str, Enum):
